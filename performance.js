@@ -33,3 +33,26 @@ function compressFirstImage(arr) {
 }
 
 compressFirstImage(images);
+
+// O(n^2)
+
+const nums = [1, 2, 3, 4, 5, 6, 7, 8];
+
+function createPairs(arr) {
+
+    let pairs = [];
+
+    for (let i = 0; i < arr.length; i++) {
+
+        for (let j = 0; j < arr.length; j++) {
+            
+            pairs.push([arr[i], arr[j]]);
+            
+        }
+        
+    }
+
+    console.log(pairs);
+}
+
+findPairs(nums);
