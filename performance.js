@@ -35,7 +35,6 @@ function compressFirstImage(arr) {
 compressFirstImage(images);
 
 // O(n^2)
-
 const nums = [1, 2, 3, 4, 5, 6, 7, 8];
 
 function createPairs(arr) {
