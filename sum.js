@@ -15,3 +15,19 @@ function findPairedSum(array, sum) {
 }
 
 console.log(findPairedSum(beta, 8));
+
+function findPairedSum2(array, sum){
+
+    const gamma = new Set();
+
+    for(let i = 0; i < array.length; i++) {
+        if (gamma.has(array[i])) {
+            return true;
+        }
+        gamma.add(sum - array[i]);
+    }
+    return false;
+
+}
+
+console.log(findPairedSum(alpha, 7));
