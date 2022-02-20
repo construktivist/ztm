@@ -2,18 +2,18 @@ const wolf = ['w', 'o', 'l', 'f'];
 const parrot = ['p', 'a', 'r', 'r', 'o', 't'];
 const zebra = ['z', 'e', 'b', 'r', 'a'];
 
-function findMatch(array1, array2) {
+function findMatch(animal1, animal2) {
 
-    let map = {};
-    for(let i = 0; i < array1.length; i++) {
-        if (!map[array1[i]]){
-            const letter = array1[i];
-            map[letter] = true;    
+    let zoo = {};
+    for(let i = 0; i < animal1.length; i++) {
+        if (!zoo[animal1[i]]){
+            const letter = animal1[i];
+            zoo[letter] = true;    
         }
     }
 
-    for(let j = 0; j < array2.length; j++) {
-        if(map[array2[j]]){
+    for(let j = 0; j < animal2.length; j++) {
+        if(zoo[animal2[j]]){
             return true
         }
     }
@@ -23,4 +23,4 @@ function findMatch(array1, array2) {
 
 // Time Complexity: O(a + b);
 
-console.log(findMatch(wolf, zebra));
+console.log(findMatch(wolf, parrot));
