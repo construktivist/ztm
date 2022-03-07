@@ -1,18 +1,5 @@
 // 12 ---> 8 ---> 19
 
-// let linkedList = {
-//     head: {
-//         value: 12,
-//         next: {
-//             value: 8,
-//             next: {
-//                 value: 19,
-//                 next: null
-//             }
-//         }
-//     }
-// }
-
 class Node {
     constructor(value) {
         this.value = value;
@@ -59,6 +46,13 @@ class linkedList {
         this.length++;        
     }
 
+    remove(index) {
+        const node = this.traverseList(index - 1);
+        const lead = this.traverseList(index + 1);
+        node.next = lead;
+        this.printList();
+    }
+
     traverseList(index) {
         let counter = 0;
         let currentNode = this.head;
@@ -79,8 +73,10 @@ class linkedList {
         console.log(list);
     }
 
-    printNode() {
-        //code here
+    printNode(index) {
+        const node = this.traverseList(index);
+        console.log(`Value: ${node.value}`);
+        console.log(`Pointer: ${node.pointer}`);
     }
 
 }
@@ -92,3 +88,4 @@ myList.prepend(14);
 myList.printList();
 myList.insert(2, 54);
 myList.printList();
+myList.remove(2);
